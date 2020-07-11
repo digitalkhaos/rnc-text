@@ -6,7 +6,12 @@ namespace rnc_text
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+                
         }
+    }
+
+    public class NameEntry
+    {
+
     }
 }
