@@ -42,15 +42,22 @@ namespace rnc_text
             {
                 Console.WriteLine(e);
             }
+
+            PrintMenu();
+        }
+
+        public class CommandPrompt
+        {
+
         }
     }
 
     public class NameEntry
     {
-        private readonly int _id;
+        //private readonly int _id;
         private readonly string _name;
-        private readonly int _timesChosen;
-        private readonly DateTime _lastChosenDateTime;
+        //private readonly int _timesChosen;
+        //private readonly DateTime _lastChosenDateTime;
         public NameEntry(string name)
         {
             _name = name;
@@ -59,20 +66,22 @@ namespace rnc_text
         public NameEntry(string name, DateTime nowDateTime)
         {
             _name = name;
-            _lastChosenDateTime = nowDateTime;
-            _timesChosen += 1;
+            //_lastChosenDateTime = nowDateTime;
+            //_timesChosen += 1;
         }
 
         public string Name
         {
             get;
-            private set;
+            set;  //something has to happen here I think, some type of protection?
         }
 
+        /*
         public int TimeChosen
         {
             get;
             set;
         }
+        */
     }
 }
