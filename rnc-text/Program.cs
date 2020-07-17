@@ -11,8 +11,22 @@ namespace rnc_text
     {
         static void PrintMenu()
         {
-            Console.WriteLine("Main Menu\n");
-            Console.WriteLine();
+            string Menu = "************************" +
+                          "1 - List names in file." +
+                          "2 - Add name to list." +
+                          "3 - Remove name from list." +
+                          "4 - Statistics (not implemented)." +
+                          "? - This menu (Help)." +
+                          "x - Exit." +
+                          "*************************";
+            try
+            {
+                Console.WriteLine(Menu);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(e);
+            }
         }
         static void Main(string[] args)
         {
@@ -44,11 +58,30 @@ namespace rnc_text
             }
 
             PrintMenu();
+            CommandPrompt.ShowPrompt();
         }
 
-        public class CommandPrompt
+        private static class CommandPrompt
         {
+            private static readonly string _prompt = "-->";
 
+            public static int ShowPrompt()
+            {
+                try
+                {
+                    Console.WriteLine(_prompt);
+
+                    return 0;
+                }
+
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine(e);
+                    return 1;
+                }
+                
+            }
+            
         }
     }
 
@@ -58,17 +91,22 @@ namespace rnc_text
         private readonly string _name;
         //private readonly int _timesChosen;
         //private readonly DateTime _lastChosenDateTime;
+        
         public NameEntry(string name)
         {
             _name = name;
         }
 
-        public NameEntry(string name, DateTime nowDateTime)
+        
+        /*
+         * public NameEntry(string name, DateTime nowDateTime)
+         
         {
             _name = name;
             //_lastChosenDateTime = nowDateTime;
             //_timesChosen += 1;
         }
+        */
 
         public string Name
         {
