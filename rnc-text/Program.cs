@@ -9,16 +9,22 @@ namespace rnc_text
 {
     class Program
     {
+
+        public static void ListNames(List<string> names)
+        { 
+            
+        }
+
         static void PrintMenu()
-        {
+        { 
             string Menu = "************************" +
-                          "1 - List names in file." +
-                          "2 - Add name to list." +
-                          "3 - Remove name from list." +
-                          "4 - Statistics (not implemented)." +
-                          "? - This menu (Help)." +
-                          "x - Exit." +
-                          "*************************";
+                        "1 - List names in file." +
+                        "2 - Add name to list." +
+                        "3 - Remove name from list." +
+                        "4 - Statistics (not implemented)." +
+                        "? - This menu (Help)." +
+                        "x - Exit." +
+                        "*************************";
             try
             {
                 Console.WriteLine(Menu);
@@ -63,13 +69,13 @@ namespace rnc_text
 
         private static class CommandPrompt
         {
-            private static readonly string _prompt = "-->";
+            private const string Prompt = "-->";
 
             public static int ShowPrompt()
             {
                 try
                 {
-                    Console.WriteLine(_prompt);
+                    Console.WriteLine(Prompt);
 
                     return 0;
                 }
